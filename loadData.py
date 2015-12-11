@@ -6,17 +6,16 @@ from sklearn.linear_model import SGDClassifier as LR
 from sklearn.ensemble import BaggingClassifier
 from sklearn.ensemble import GradientBoostingClassifier
 
-def load():
-  train = pd.read_csv('train/X_train.txt', header=None, delim_whitespace=True)
-  test = pd.read_csv('test/X_test.txt', header=None, delim_whitespace=True)
+def load(synthetic=False):
+  if (not synthetic):
+    train = pd.read_csv('train/X_train.txt', header=None, delim_whitespace=True)
+    test = pd.read_csv('test/X_test.txt', header=None, delim_whitespace=True)
 
-  label = pd.read_csv('train/y_train.txt', header=None, delim_whitespace=True)
-  test_label = pd.read_csv('test/y_test.txt', header=None, delim_whitespace=True)
+    label = pd.read_csv('train/y_train.txt', header=None, delim_whitespace=True)
+    test_label = pd.read_csv('test/y_test.txt', header=None, delim_whitespace=True)
 
-  return train, label, test, test_label
-  #if (not synthetic):
-  #  print "oh"
-  '''
+    return train, label, test, test_label
+
   mu1 = np.array([0, 1])
   mu2 = np.array([-0.5, -1.0])
   mu3 = np.array([3.2, .6])
@@ -48,4 +47,5 @@ def load():
   ax1.scatter(d2[:,0], d2[:,1], color='blue')
   ax1.scatter(d3[:,0], d3[:,1], color='green')
   ax1.scatter(d4[:,0], d4[:,1], color='black')
-  '''
+
+  return syntheticTrain, syntheticTrainLabel, syntheticTest, syntheticTestLabel
