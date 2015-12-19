@@ -6,8 +6,8 @@ from loadData import load
 from sklearn.linear_model import LogisticRegression as LR
 
 
-def logisticRegressionTrain(trainData, trainLabels):
-  model = LR()
+def logisticRegressionTrain(trainData, trainLabels, solver="liblinear"):
+  model = LR(solver=solver)
   model.fit(trainData, np.array(trainLabels).ravel())
   return model
 
