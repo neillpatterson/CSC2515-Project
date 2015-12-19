@@ -1,0 +1,5 @@
+AdaBoost
+========
+* May overfit if you have high dimesnions and/or use strong learners (http://stats.stackexchange.com/questions/20622/is-adaboost-less-or-more-prone-to-overfitting)
+* May overfit if your classes are overlapping (http://groups.inf.ed.ac.uk/calvin/hp_avezhnev/Pubs/AvoidingBoostingOverfitting.pdf)
+* We can reduce overfitting im Adaboost by using validation set (http://www.cs.utsa.edu/~bylander/pubs/FLAIRS06-108.pdf)
