@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 from loadData import load
 from sklearn.neural_network import MLPClassifier
 
-def neuralNetworkTrain(trainData, trainLabels, numHiddenNode, activationFcn="relu"):
-  model = MLPClassifier(hidden_layer_sizes=(numHiddenNodes,), random_state=1, activation=activationFcn)
+def neuralNetworkTrain(trainData, trainLabels, numHiddenNodes, activationFcn="relu", learningRate=0.0001, regularization=0.0001):
+  model = MLPClassifier(hidden_layer_sizes=(numHiddenNodes,), random_state=1, activation=activationFcn, learning_rate_init=learningRate, alpha=regularization)
   model.fit(trainData, np.array(trainLabels).ravel())
   return model
 

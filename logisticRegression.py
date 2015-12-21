@@ -14,7 +14,7 @@ def logisticRegressionTrain(trainData, trainLabels, solver="liblinear"):
 def logisticRegressionEvaluate(model, data, labels):
   predictions = model.predict(data)
   errors = (predictions != np.array(labels).ravel())
-  return str(100 * np.mean(errors))
+  return 100 * np.mean(errors)
 
 
 if __name__ == '__main__':
